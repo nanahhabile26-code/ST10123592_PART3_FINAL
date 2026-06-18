@@ -8,7 +8,7 @@ Good Food. Good Mood. Good Times.
 Prepared By:  Lubanzi Mthembu
 Organisation:  Lubanzi's Eatery
 Location:  11 Park Avenue, Umhlanga, Durban
-Contact:  +27 (068) 126-2668  |  lubanzi@eatery.co.za
+Contact:  (068) 126-2668  |  lubanzi@eatery.co.za
 Version:  1.0
 Date:  May 2026
 Status:  Draft for Review
@@ -22,8 +22,7 @@ Organisation	Lubanzi's Eatery
 Industry	Food & Beverage / Hospitality
 Location	11 Park Avenue, Umhlanga, Durban, KwaZulu-Natal
 Category	Full-Service Restaurant & Eatery
-Website Status	New Development Required
-Github Hosting Link: 
+Website Status	Published
 
 1.1  Brief History
 Lubanzi's Eatery is a premier dining destination nestled in Umhlanga, Durban. Founded with a singular passion for honest, intentional food and warm hospitality, the eatery has grown from a neighbourhood favourite into a full-service restaurant offering breakfast, lunch, dinner, and everything in between.
@@ -58,7 +57,7 @@ Website Goals and Objectives
 2.2  Key Performance Indicators (KPIs)
 
 KPI	Baseline	Target — Month 3	Growth — Month 12
-Monthly Website Visitors	1,500/mo	5,000 unique visitors	12,000 unique visitors
+Monthly Website Visitors	50-150	100-300 unique visitors	500-1000 unique visitors
 Direct Online Bookings	Manual only	30 bookings/month	100 bookings/month
 Bounce Rate	—	Below 55%	Below 40%
 Average Session Duration	—	1 min 30 sec	3 min+
@@ -168,13 +167,8 @@ Backup	Daily automated backups with 30-day retention
 
 Frontend	HTML5, CSS3 (CSS Variables & Grid/Flexbox), JavaScript (ES6+)
 CSS Framework	Tailwind CSS — rapid, consistent utility-based styling
-Frontend Framework	React.js (Next.js) — server-side rendering and SEO benefits
-Backend / CMS	WordPress with Elementor Pro — for ease of staff content management
-Reservation System	Custom booking form with email notifications or OpenTable integration
 Database	MySQL (via WordPress) with Redis caching
 Version Control	Git (GitHub) — for codebase management and collaboration
-Analytics	Google Analytics 4 + Google Search Console + Hotjar (heatmaps)
-Accessibility	WCAG 2.1 AA compliance: axe DevTools and Lighthouse audits
  
 SECTION 7
 Project Timeline and Milestones
@@ -190,12 +184,6 @@ Phase 3	Brand & Style Guide: Colour palette, typography, UI components	Week 5
 Phase 3	High-Fidelity Mockups: Homepage, Services, Contact, About pages	Week 6–7
 Phase 3	Client Design Review & Approval — revision round included	Week 8
 Phase 4	Frontend Development: HTML/CSS/JS, responsive implementation	Week 9–10
-Phase 4	CMS Integration: WordPress setup, content entry, menu system	Week 11–12
-Phase 5	Backend & Integrations: Contact form, maps, social, WhatsApp, analytics	Week 13
-Phase 5	Quality Assurance: Cross-browser, cross-device, accessibility, speed tests	Week 14
-Phase 5	User Acceptance Testing (UAT): Client walkthrough and feedback	Week 15
-Phase 6	Launch Preparation: DNS migration, SSL, staging to live deployment	Week 16
-Phase 6	Post-Launch Support: Bug fixes, performance monitoring, staff training	Weeks 17–18
  
 SECTION 8
 Budget Estimate
@@ -210,10 +198,7 @@ Integrations	Contact form, Google Maps, newsletter (Mailchimp), social feeds, Wh
 Content	Professional food photography (1-day shoot), copywriting, image optimisation	R 15,000
 SEO Setup	On-page SEO, keyword strategy, Google Business Profile, sitemap submission	R 5,500
 Testing & QA	Cross-browser/device, accessibility audit, performance testing	R 4,000
-Hosting & Domain	VPS hosting (1 year), SSL certificate, CDN (Cloudflare)	R 3,600
-Training	CMS training for staff (2 sessions), user manual documentation	R 2,500
-Maintenance	6-month post-launch support, security updates, performance monitoring	R 7,800
-TOTAL ESTIMATED BUDGET	R 117,900
+TOTAL ESTIMATED BUDGET	R 104 000
 
 Budget Notes
 •	Ongoing monthly maintenance after the initial 6-month period is estimated at R 1,300/month.
