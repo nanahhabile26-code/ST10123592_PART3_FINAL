@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lubanzi's Eatery — Home</title>
+  <link rel="stylesheet" href="./css/stylesheet.css">
+  <style>
+    /* ── Home page extras ── */
+    .home-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .home-intro-text {
+      background: var(--warm-white);
+      padding: 90px 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .home-intro-text .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 18px;
+    }
+
+    .home-intro-text h2 {
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      color: var(--bark);
+      font-style: italic;
+      margin-bottom: 22px;
+      line-height: 1.12;
+      font-weight: 400;
+    }
+
+    .home-intro-text h2::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin-top: 16px;
+    }
+
+    .home-intro-text p {
+      color: #4a3628;
+      font-size: 0.97rem;
+      line-height: 1.95;
+      font-weight: 300;
+      max-width: 440px;
+      margin-bottom: 36px;
+    }
+
+    .home-intro-text a {
+      display: inline-block;
+      padding: 13px 40px;
+      border: 1px solid var(--gold);
+      color: var(--bark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: background 0.25s, color 0.25s, transform 0.2s;
+      align-self: flex-start;
+    }
+
+    .home-intro-text a:hover {
+      background: var(--gold);
+      color: var(--onyx);
+      transform: translateY(-2px);
+    }
+
+    .home-intro-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+    }
+
+    /* Feature strip */
+    .feature-strip {
+      background: var(--onyx);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .feature-item {
+      padding: 64px 44px;
+      text-align: center;
+      border-right: 1px solid rgba(201, 151, 58, 0.12);
+      transition: background 0.3s;
+    }
+
+    .feature-item:last-child {
+      border-right: none;
+    }
+
+    .feature-item:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .feature-item .f-icon {
+      font-size: 2.2rem;
+      margin-bottom: 18px;
+    }
+
+    .feature-item h3 {
+      font-size: 1.35rem;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .feature-item p {
+      font-size: 0.86rem;
+      color: rgba(255, 255, 255, 0.4);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* Menu preview */
+    .menu-preview {
+      padding: 110px 40px;
+      background: var(--ivory);
+      text-align: center;
+    }
+
+    .menu-preview .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 14px;
+    }
+
+    .menu-preview h2 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      color: var(--bark);
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+
+    .menu-preview h2::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin: 14px auto 60px;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3px;
+      max-width: 1200px;
+      margin: 0 auto 52px;
+    }
+
+    .preview-card {
+      position: relative;
+      overflow: hidden;
+      height: 360px;
+      cursor: pointer;
+    }
+
+    .preview-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .preview-card:hover img {
+      transform: scale(1.07);
+    }
+
+    .preview-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26, 18, 8, 0.88) 0%, rgba(26, 18, 8, 0.08) 55%);
+      transition: background 0.3s;
+    }
+
+    .preview-card:hover .preview-card-overlay {
+      background: linear-gradient(to top, rgba(26, 18, 8, 0.9) 0%, rgba(26, 18, 8, 0.25) 55%);
+    }
+
+    .preview-card-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 30px;
+      color: #fff;
+      transform: translateY(6px);
+      transition: transform 0.3s;
+    }
+
+    .preview-card:hover .preview-card-text {
+      transform: translateY(0);
+    }
+
+    .preview-card-text .label {
+      font-size: 0.66rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 7px;
+      font-weight: 700;
+    }
+
+    .preview-card-text h3 {
+      font-size: 1.7rem;
+      color: #fff;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    a.view-btn {
+      display: inline-block;
+      padding: 15px 52px;
+      background: var(--gold);
+      color: var(--onyx);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: background 0.22s, transform 0.18s, box-shadow 0.22s;
+    }
+
+    a.view-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(201, 151, 58, 0.28);
+    }
+
+    @media (max-width: 900px) {
+      .home-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .home-intro-text {
+        padding: 56px 32px;
+      }
+
+      .home-intro-img img {
+        min-height: 320px;
+      }
+
+      .feature-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(201, 151, 58, 0.12);
+      }
+
+      .menu-preview {
+        padding: 64px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="navbar">
+      <a href="./index.html" class="logo">Lubanzi's Eatery</a>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="./index.html" class="active">Home</a></li>
+        <li>
+          <a href="#" class="submenu-toggle">Menu ▾</a>
+          <ul class="submenu">
+            <li><a href="./services.html#breakfast">Breakfast &amp; Lunch</a></li>
+            <li><a href="./services.html#dinner">Dinner</a></li>
+            <li><a href="./services.html#beverages">Beverages</a></li>
+          </ul>
+        </li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Slideshow -->
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="./img/imgWorkSpace.jpg" alt="Lubanzi's Eatery interior">
+      <div class="slide-overlay"></div>
+      <div class="text">A journey in culinary excellence</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="./img/imgCulinary.jpg" alt="Lubanzi's dining at dusk">
+      <div class="slide-overlay"></div>
+      <div class="text">Where every evening becomes an occasion</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="./img/imgBuffetArea.png" alt="Lubanzi's buffet spread">
+      <div class="slide-overlay"></div>
+      <div class="text">Good Food. Good Mood. Good Times.</div>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="dots-container">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </div>
+
+  <!-- Intro split -->
+  <div class="home-intro">
+    <div class="home-intro-text">
+      <p class="eyebrow">Welcome</p>
+      <h2>Lubanzi's Eatery</h2>
+      <p>From sunrise to sundown, our kitchen crafts every dish with intention and heart. Whether you're in for a
+        leisurely breakfast, a convivial lunch, or an evening dinner, Lubanzi's is where flavour meets warmth.</p>
+      <a href="./services.html">Explore Our Menu</a>
+    </div>
+    <div class="home-intro-img">
+      <img src="./img/imgComfort.png" alt="Guests dining at Lubanzi's Eatery">
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="feature-strip">
+    <div class="feature-item">
+      <div class="f-icon">🍳</div>
+      <h3>Breakfast &amp; Lunch</h3>
+      <p>Freshly prepared morning plates and midday fare — from classic English breakfasts to grilled chicken lunch
+        bowls.</p>
+    </div>
+    <div class="feature-item">
+      <div class="f-icon">🥩</div>
+      <h3>Dinner Service</h3>
+      <p>An elevated evening menu featuring prime cuts, seasonal sides, and a rotating monthly feature dish.</p>
+    </div>
+    <div class="feature-item">
+      <div class="f-icon">☕</div>
+      <h3>Drinks &amp; More</h3>
+      <p>Expertly pulled espresso, ice-cold milkshakes, fresh juices, and everything in between.</p>
+    </div>
+  </div>
+
+  <!-- Menu preview -->
+  <section class="menu-preview">
+    <p class="eyebrow">Our Menu</p>
+    <h2>Something for Every Hour</h2>
+    <div class="preview-grid">
+      <div class="preview-card">
+        <img src="./img/imgBreakfast.png" alt="Lubanzi's evening ambiance">
+        <div class="preview-card-overlay"></div>
+        <div class="preview-card-text">
+          <p class="label">Morning</p>
+          <h3>Breakfast</h3>
+        </div>
+      </div>
+      <div class="preview-card">
+        <img src="./img/imgAmbiance&Offerings.png" alt="Lubanzi's full menu">
+        <div class="preview-card-overlay"></div>
+        <div class="preview-card-text">
+          <p class="label">All Day</p>
+          <h3>Lunch &amp; Dinner</h3>
+        </div>
+      </div>
+      <div class="preview-card">
+        <img src="./img/imgBuffetArea1.png" alt="Lubanzi's milkshake">
+        <div class="preview-card-overlay"></div>
+        <div class="preview-card-text">
+          <p class="label">Special Events</p>
+          <h3>Buffet &amp; Catering</h3>
+        </div>
+      </div>
+    </div>
+    <a href="./services.html" class="view-btn">View Full Menu</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">
+      <h2>Lubanzi's Eatery</h2>
+      <p>Good Food. Good Mood. Good Times.</p>
+    </div>
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./services.html#breakfast">Breakfast &amp; Lunch</a></li>
+        <li><a href="./services.html#dinner">Dinner</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>📍 11 Park Avenue Umhlanga, Durban</p>
+      <p>📞 (068) 126-2668</p>
+      <p>✉️ lubanzi@eatery.co.za</p>
+      <div class="footer-social">
+        <a href="#" title="Website">🌐</a>
+        <a href="#" title="Facebook">📘</a>
+        <a href="#" title="Instagram">📸</a>
+      </div>
+    </div>
+    <div class="footer-newsletter">
+      <h3>Newsletter</h3>
+      <p>Subscribe for specials and seasonal updates.</p>
+      <form onsubmit="return false;">
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">Join</button>
+      </form>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Lubanzi's Eatery. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) { showSlides(slideIndex += n); }
+    function currentSlide(n) { showSlides(slideIndex = n); }
+    function showSlides(n) {
+      const slides = document.getElementsByClassName('mySlides');
+      const dots = document.getElementsByClassName('dot');
+      if (n > slides.length) slideIndex = 1;
+      if (n < 1) slideIndex = slides.length;
+      Array.from(slides).forEach(s => s.style.display = 'none');
+      Array.from(dots).forEach(d => d.classList.remove('active'));
+      slides[slideIndex - 1].style.display = 'block';
+      dots[slideIndex - 1].classList.add('active');
+    }
+    setInterval(() => plusSlides(1), 5000);
+  </script>
+  <script src="./JavaScript/nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Lubanzi's Eatery</title>
+  <link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="navbar">
+      <a href="./index.html" class="logo">Lubanzi's Eatery</a>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="./index.html">Home</a></li>
+        <li>
+          <a href="#" class="submenu-toggle">Menu ▾</a>
+          <ul class="submenu">
+            <li><a href="./services.html#breakfast">Breakfast &amp; Lunch</a></li>
+            <li><a href="./services.html#dinner">Dinner</a></li>
+            <li><a href="./services.html#beverages">Beverages</a></li>
+          </ul>
+        </li>
+        <li><a href="./about.html" class="active">About</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- About Hero -->
+  <section class="about-hero">
+    <h1>Our Story</h1>
+    <p>Born from a passion for honest food and warm hospitality, Lubanzi's Eatery has become a destination for those who believe that great meals are made with intention — and shared with joy.</p>
+  </section>
+
+  <!-- Story Section -->
+  <section class="about-grid">
+    <div class="about-text">
+      <h2>Where It All Began</h2>
+      <p>Lubanzi's Eatery opened with a singular vision: to create a space where people could gather, slow down, and experience food that tells a story. Every dish on our menu reflects that founding purpose.</p>
+      <p>Nestled in Umhlanga, Durban, we've grown from a neighbourhood eatery into a full dining destination — offering breakfast, lunch, dinner and everything in between. Our kitchen sources local ingredients wherever possible and our chefs treat every plate like a canvas.</p>
+      <p>Whether you're joining us for a quiet morning espresso or an indulgent evening dinner, you'll always leave with a full stomach and a warm heart.</p>
+    </div>
+    <img src="./img/imgAmbiance&Offerings.png" alt="Lubanzi's Eatrey Offerings">
+  </section>
+
+  <!-- Second Story Split (reversed) -->
+  <section class="about-grid" style="direction: rtl;">
+    <div class="about-text" style="direction: ltr; background: var(--ivory);">
+      <h2>The Dining Experience</h2>
+      <p>From the candlelit warmth of our evening service to the bright, buzzing energy of our morning rush — Lubanzi's is designed to feel like home.</p>
+      <p>Our menu spans a full day: hearty breakfasts, satisfying lunch bowls, elevated dinner plates, and an extensive drinks menu crafted by our in-house baristas. Every visit is a new experience.</p>
+      <p>We also cater for private dining, corporate events and celebrations — contact us to plan your perfect occasion at Lubanzi's.</p>
+    </div>
+    <img src="./img/imgEveningGlow.png" alt="Lubanzi's evening ambiance — candlelit tables" style="direction: ltr;">
+  </section>
+
+  <!-- Values Section -->
+  <section class="about-values">
+    <h2>What We Stand For</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="icon">🍽️</div>
+        <h3>Culinary Excellence</h3>
+        <p>We never cut corners. From our sourced ingredients to our plated presentations, quality is in every detail.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">🌿</div>
+        <h3>Local &amp; Fresh</h3>
+        <p>We partner with local suppliers to bring you the freshest seasonal ingredients on every plate, every day.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">🤝</div>
+        <h3>Community</h3>
+        <p>Lubanzi's is more than an eatery — it's a gathering place for Durban's food lovers, neighbours and friends.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">❤️</div>
+        <h3>Made with Heart</h3>
+        <p>Our team puts heart into everything — from the care in our kitchen to the warmth at our front of house.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <h2>Come Dine with Us</h2>
+    <p>Reserve your table today and experience what makes Lubanzi's truly special.</p>
+    <a href="./contact.html" class="cta-btn">Make a Reservation</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">
+      <h2>Lubanzi's Eatery</h2>
+      <p>Good Food. Good Mood. Good Times.</p>
+    </div>
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./services.html#breakfast">Breakfast &amp; Lunch</a></li>
+        <li><a href="./services.html#dinner">Dinner</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>📍 11 Park Avenue Umhlanga, Durban</p>
+      <p>📞 (068) 126-2668</p>
+      <p>✉️ lubanzi@eatery.co.za</p>
+      <div class="footer-social">
+        <a href="#" title="Website">🌐</a>
+        <a href="#" title="Facebook">📘</a>
+        <a href="#" title="Instagram">📸</a>
+      </div>
+    </div>
+    <div class="footer-newsletter">
+      <h3>Newsletter</h3>
+      <p>Subscribe for specials and seasonal updates.</p>
+      <form onsubmit="return false;">
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">Join</button>
+      </form>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Lubanzi's Eatery. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="./JavaScript/nav.js"></script>
+</body>
+</html>
